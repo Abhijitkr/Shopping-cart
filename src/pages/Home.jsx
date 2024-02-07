@@ -18,8 +18,6 @@ export default function Home() {
     }
   }
 
-  console.log(products);
-
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -33,7 +31,6 @@ export default function Home() {
             height="80"
             width="80"
             ariaLabel="color-ring-loading"
-            wrapperStyle={{}}
             wrapperClass="color-ring-wrapper"
             colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
           />
