@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartTile from "../components/CartTile";
+import { selectCart } from "../store/slice/cart-slice";
 
 export default function Cart() {
   const [totalCart, setTotalCart] = useState(0);
 
-  const { cart } = useSelector((state) => state);
+  // const { cart } = useSelector((state) => state);
+  const { cart } = useSelector(selectCart);
 
   console.log(cart, totalCart);
 
@@ -17,12 +19,15 @@ export default function Cart() {
   return (
     <div className="h-full mt-28 mb-10">
       {cart && cart.length ? (
-        <div className="">
-          <h1 className="text-4xl font-bold text-center text-green-600 mb-5">
-            Your Cart
-          </h1>
-          <div className="flex ">
-            <div className="flex flex-col items-center container gap-5 w-1/2">
+        <div>
+          <div className="fixed bg-white container top-20 pt-5">
+            <h1 className="text-4xl font-bold text-center text-green-600 mb-5">
+              Your Cart
+            </h1>
+            <div className="h-1 bg-white"></div>
+          </div>
+          <div className="flex">
+            <div className="flex flex-col items-center container gap-5 w-1/2 mt-10">
               {cart.map((cartItem) => (
                 <CartTile key={cartItem.id} cartItem={cartItem} />
               ))}

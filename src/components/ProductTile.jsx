@@ -1,9 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../store/slice/cart-slice";
+import {
+  addToCart,
+  removeFromCart,
+  selectCart,
+} from "../store/slice/cart-slice";
 
 export default function ProductTile({ product }) {
   const dispatch = useDispatch();
-  const { cart } = useSelector((state) => state);
+  // const { cart } = useSelector((state) => state);
+  const { cart } = useSelector(selectCart);
 
   function handleCart() {
     dispatch(addToCart(product));
