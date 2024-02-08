@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div>
       {loading ? (
-        <div className="flex justify-center h-80 items-center">
+        <div className="flex justify-center mt-60">
           <ColorRing
             visible={true}
             height="80"
