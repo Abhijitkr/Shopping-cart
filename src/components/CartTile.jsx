@@ -5,7 +5,7 @@ export default function CartTile({ cartItem }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex bg-green-200 h-52 justify-around w-96 items-center mx-5 p-4 rounded hover:shadow-green-400 hover:shadow-md">
+    <div className="flex bg-green-200 h-52 justify-around w-96 items-center mx-5 p-4 rounded hover:shadow-green-400 hover:shadow-md ">
       <div className="h-40 max-w-32">
         <img
           src={cartItem.image}

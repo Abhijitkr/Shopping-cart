@@ -15,14 +15,31 @@ export default function Cart() {
   }, [cart]);
 
   return (
-    <div className="h-full flex flex-col justify-center items-around gap-5 mt-28 mb-10">
-      <h1 className="text-4xl font-bold text-center text-green-600">
-        Your Cart
-      </h1>
+    <div className="h-full mt-28 mb-10">
       {cart && cart.length ? (
-        cart.map((cartItem) => (
-          <CartTile key={cartItem.id} cartItem={cartItem} />
-        ))
+        <div className="">
+          <h1 className="text-4xl font-bold text-center text-green-600 mb-5">
+            Your Cart
+          </h1>
+          <div className="flex ">
+            <div className="flex flex-col items-center container gap-5 w-1/2">
+              {cart.map((cartItem) => (
+                <CartTile key={cartItem.id} cartItem={cartItem} />
+              ))}
+            </div>
+            <div className="flex flex-col w-1/4 text-center bg-green-200 h-40 justify-center mt-60 fixed right-80 shadow-green-500 shadow-md ">
+              <h2 className="text-3xl font-bold">Cart Summary</h2>
+              <p>
+                <span className="text-lg font-medium">Total Item: </span>
+                <span className="text-xl font-semibold">{cart.length}</span>
+              </p>
+              <p>
+                <span className="text-lg font-medium">Total Price: </span>
+                <span className="text-xl font-semibold">${totalCart}</span>
+              </p>
+            </div>
+          </div>
+        </div>
       ) : (
         <div className="h-screen text-center mt-60">
           <h2 className="text-3xl font-bold">Your Cart is Empty</h2>
