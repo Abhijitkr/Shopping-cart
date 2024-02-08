@@ -16,7 +16,7 @@ export default function Cart() {
 
   return (
     <div className="h-full flex flex-col justify-center items-around gap-5 mt-28 mb-10">
-      <h1 className="text-4xl font-bold text-center mb-2 text-green-600">
+      <h1 className="text-4xl font-bold text-center text-green-600">
         Your Cart
       </h1>
       {cart && cart.length ? (
